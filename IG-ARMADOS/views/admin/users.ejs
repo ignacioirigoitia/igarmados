@@ -1,0 +1,79 @@
+<%- include("../partials/head") %>
+
+    <body>
+        <div class="control-users">
+            <script>
+                function eliminar() {
+                    resultado = confirm("¿Seguro que desea eliminar este usuario?");
+                    return resultado;
+                }
+            </script>
+
+            <%- include("../partials/header") %>
+
+                <div class="productList container-fluid">
+                    <main>
+                        <table class="table">
+                            <thead>
+                                <!--      <tr>
+                    <td colspan="5" class="table-active"><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></td>
+                    <th scope="row"><button class="add"><i class="fas fa-plus"></i></button></th>
+                </tr> -->
+                                <tr class="columna">
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col" class="w992">Apellido</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Rol</th>
+                                    <th scope="col" class="accion" >Accion</th>
+                                </tr>
+                            </thead>
+                            <% users.forEach(user=> { %>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <p>
+                                                <%=user.name%>
+                                            </p>
+                                        </th>
+                                        <th class="w992">
+                                            <p>
+                                                <%=user.last_name%> 
+                                            </p>
+                                        </th>
+                                        <td class="name">
+                                                <p>
+                                                    <%=user.email%>
+                                                </p> 
+                                        </td>
+                                        <td class="price">
+                                            <p>
+                                                <%=user.roles.name%>
+                                            </p>
+                                        </td>
+
+                                        <td class="accion">
+                                            <form action="/admin/user/delete/<%= user.id %>?_method=DELETE" method="POST"
+                                                class="card-body__form" id="dele<%= user.id %>">
+                                                <button class="delete" type="submit"
+                                                onclick="funar(event,document.querySelector('#dele<%= user.id %>'))"></i><i
+                                                        class="far fa-trash-alt"></i></button>
+                                            </form>
+                                            <a href="/admin/users/<%= user.id %>"><button class="edit"> <i
+                                                        class="fas fa-pencil-alt"></i></li></button></a>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                                </tbody>
+                        </table>
+                    </main>
+
+                </div>
+                <%- include("../partials/footer") %>
+                    <%- include("../partials/scriptBS") %>
+        </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>            
+            <script src="/javascript/alertUsuarios.js"></script>
+    </body>
+
+    </html>

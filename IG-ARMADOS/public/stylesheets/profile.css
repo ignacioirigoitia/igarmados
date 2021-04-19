@@ -1,0 +1,102 @@
+/* variables */
+:root{
+    --orange:#ff6600;
+    --white:#ffffff;
+    --black:#1f1f1f;
+    --red:#e30909;
+    }
+    
+.btn-profile a{
+    text-decoration: none;
+    color: var(--white);
+}
+   
+    
+.profile img{
+    margin-top: 40px;
+    width: 150px; 
+    padding: 0;
+    border-radius: 100px;
+    border: #ff6600 solid 2px;
+   
+}
+.profile .list-group{
+    margin: 20px 0;
+    
+}
+
+
+/* !edicion de administrador */
+.profile .rol-select{
+    width: 100%;
+    padding: 1.5rem 1rem;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+}
+.profile .rol-select-form button{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* !------------------------------ */
+
+
+
+
+
+.profile .list-group p{
+    font-weight: bold;
+    color: var(--black);
+    padding-top: 6px;
+    margin-bottom: 10px;
+}
+.profile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+.profile .btn-profile{
+    background-color: var(--orange);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-style: none;
+    color: #ffffff;
+}
+
+
+
+
+
+@media(min-width: 992px){
+   
+    .profile{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .profile img{
+        width: 200px;
+        height: 20%;
+    }
+    .profile .list-group{
+        margin-top: 48px;
+        margin-right:30%; 
+         width: 30%;
+        
+    }
+    .profile .btn-profile{
+       margin-left: 45%;
+     
+    }
+   
+
+}
